@@ -71,6 +71,18 @@ class ViewController: UIViewController {
 //        }
     }
     
+    func startNewRound(){ //to start new round we should replace cards back down and reset score to 0
+        for n in 0..<cardButtons.count{
+            game.cards[n].isFaceUp = false
+            game.cards[n].isMatched = false
+        }
+    }
+    
+    @IBAction func newGameButton(_ sender: UIButton) {
+        flipCount = 0
+        startNewRound()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
